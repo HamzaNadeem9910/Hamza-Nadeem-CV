@@ -1,11 +1,21 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M. Hamza Nadeem - Portfolio CV</title>
+
+<title>M. Hamza Nadeem | Full-Stack Developer Portfolio</title>
+
+<meta name="description"
+content="Portfolio of M. Hamza Nadeem - Full-Stack Developer, React & FastAPI Developer, WordPress Developer and AI RAG Chatbot Developer.">
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -14,439 +24,1820 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:90px;
 }
 
 body{
-    font-family:'Segoe UI',sans-serif;
-    background:#f4f6f9;
-    color:#333;
+    font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:#f5f7fb;
+    color:#263238;
     line-height:1.7;
 }
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
     position:sticky;
     top:0;
-    background:#222;
+    width:100%;
     z-index:1000;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    background:rgba(15,23,42,.96);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 4px 20px rgba(15,23,42,.12);
 }
+
+.nav-container{
+    max-width:1150px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 25px;
+}
+
+
+/* NAV LOGO */
+
+.logo{
+    color:#fff;
+
+    font-size:19px;
+    font-weight:800;
+
+    text-decoration:none;
+
+    white-space:nowrap;
+
+    letter-spacing:-.3px;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+
+/* NAV LINKS */
 
 nav ul{
     display:flex;
-    justify-content:center;
+    align-items:center;
+    justify-content:flex-end;
+
     list-style:none;
-    flex-wrap:wrap;
+
+    gap:5px;
+
+    padding:0;
 }
 
 nav ul li{
-    margin:15px;
+    margin:0;
 }
 
 nav ul li a{
-    color:#fff;
+    display:block;
+
+    padding:20px 13px;
+
+    color:#dbe4f0;
+
     text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:
+    color .25s ease,
+    background .25s ease;
 }
 
 nav ul li a:hover{
-    color:#ff9800;
+    color:#38bdf8;
 }
 
-header,section{
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+header,
+section{
     max-width:1100px;
-    margin:auto;
-    padding:25px;
+
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.section{
-    background:#fff;
-    margin-top:25px;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
+
+/* =========================================================
+   HERO
+========================================================= */
+
+header{
+    padding:60px 25px 0;
 }
 
-.section:hover{
-    transform:translateY(-4px);
+.hero{
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #172554
+    );
+
+    border-radius:24px;
+
+    padding:55px;
+
+    color:white;
+
+    box-shadow:
+    0 20px 50px rgba(15,23,42,.18);
 }
 
-h1{
-    color:#1976d2;
-    font-size:40px;
-}
+.hero::after{
+    content:"";
 
-h2{
-    color:#ff5722;
-    margin-bottom:15px;
-    border-bottom:3px solid orange;
-    display:inline-block;
-    padding-bottom:5px;
-}
+    position:absolute;
 
-h3{
-    color:#009688;
-    margin-top:15px;
+    width:300px;
+    height:300px;
+
+    right:-90px;
+    top:-110px;
+
+    border-radius:50%;
+
+    background:
+    rgba(56,189,248,.13);
 }
 
 .intro{
+    position:relative;
+    z-index:2;
+
     display:flex;
+
     align-items:center;
-    gap:25px;
-    flex-wrap:wrap;
+
+    gap:35px;
 }
 
 .profile-pic{
-    width:150px;
-    height:150px;
+    width:165px;
+    height:165px;
+
+    flex-shrink:0;
+
     border-radius:50%;
+
     object-fit:cover;
     object-position:top;
-    border:4px solid orange;
+
+    border:5px solid rgba(255,255,255,.95);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
 }
 
-.contact p{
-    margin:8px 0;
+.hero-content{
+    flex:1;
+}
+
+.hero h1{
+    color:#fff;
+
+    font-size:42px;
+
+    line-height:1.15;
+
+    letter-spacing:-1.2px;
+
+    margin-bottom:8px;
+}
+
+.tagline{
+    color:#7dd3fc;
+
+    font-size:19px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.hero-description{
+    max-width:750px;
+
+    color:#dbeafe;
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+
+/* HERO CONTACT */
+
+.hero-contact{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px 24px;
+
+    margin-top:22px;
+}
+
+.hero-contact a,
+.hero-contact span{
+    color:#e2e8f0;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:500;
+}
+
+.hero-contact a:hover{
+    color:#38bdf8;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    background:#fff;
+
+    margin-top:28px;
+
+    padding:32px;
+
+    border-radius:18px;
+
+    border:1px solid #edf1f7;
+
+    box-shadow:
+    0 8px 28px rgba(15,23,42,.055);
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.section:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 14px 35px rgba(15,23,42,.09);
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h2{
+    color:#0f172a;
+
+    font-size:26px;
+
+    margin-bottom:22px;
+
+    position:relative;
+
+    display:inline-block;
+}
+
+h2::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-7px;
+
+    width:48px;
+    height:4px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #38bdf8
+    );
+}
+
+h3{
+    color:#0f766e;
+
+    font-size:19px;
+
+    margin-top:24px;
+
+    margin-bottom:8px;
+}
+
+
+/* =========================================================
+   PARAGRAPHS / LISTS
+========================================================= */
+
+p{
+    color:#475569;
 }
 
 ul{
-    padding-left:25px;
+    padding-left:22px;
 }
 
+li{
+    color:#475569;
+
+    margin:7px 0;
+}
+
+strong{
+    color:#1e293b;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-text{
+    font-size:15.5px;
+
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-item{
+    padding:18px 0;
+
+    border-bottom:1px solid #edf1f7;
+}
+
+.education-item:last-of-type{
+    border-bottom:none;
+}
+
+.education-title{
+    color:#0f172a;
+
+    font-size:17px;
+
+    font-weight:700;
+}
+
+.education-meta{
+    color:#64748b;
+
+    font-size:14px;
+
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.skill{
+    background:#f0f7ff;
+
+    color:#1d4ed8;
+
+    padding:8px 13px;
+
+    border-radius:8px;
+
+    border:1px solid #dbeafe;
+
+    font-size:13.5px;
+
+    font-weight:650;
+
+    transition:.25s;
+}
+
+.skill:hover{
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+}
+
+.project-card{
+    padding:22px;
+
+    border:1px solid #e9eef5;
+
+    border-radius:14px;
+
+    background:#fbfdff;
+
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 30px rgba(15,23,42,.08);
+
+    border-color:#cbdcfb;
+}
+
+.project-card h3{
+    margin-top:0;
+
+    color:#0f172a;
+
+    font-size:18px;
+}
+
+.project-card p{
+    font-size:14px;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+   LINKS / BUTTONS
+========================================================= */
+
 .project-link{
-    display:inline-block;
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
     margin-top:10px;
-    color:#1976d2;
+
+    padding:9px 14px;
+
+    color:#fff;
+
+    background:#2563eb;
+
+    border-radius:8px;
+
     text-decoration:none;
-    font-weight:bold;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.25s;
 }
 
 .project-link:hover{
-    color:#ff5722;
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
 }
+
+
+/* =========================================================
+   LIVE WORDPRESS SITES
+========================================================= */
+
+.website-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+}
+
+.website-card{
+    border:1px solid #e5eaf1;
+
+    border-radius:14px;
+
+    padding:22px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f8fbff
+    );
+
+    transition:.3s;
+}
+
+.website-card:hover{
+    transform:translateY(-4px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+    0 12px 30px rgba(37,99,235,.08);
+}
+
+.website-card h3{
+    margin:0 0 6px;
+
+    color:#0f172a;
+}
+
+.website-card p{
+    font-size:14px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT ITEMS
+========================================================= */
+
+.achievement-list{
+    list-style:none;
+
+    padding:0;
+}
+
+.achievement-list li{
+    position:relative;
+
+    padding:
+    13px 15px
+    13px 43px;
+
+    margin:10px 0;
+
+    background:#fafcff;
+
+    border:1px solid #edf1f7;
+
+    border-radius:10px;
+}
+
+.achievement-list li::before{
+    content:"✓";
+
+    position:absolute;
+
+    left:15px;
+
+    color:#16a34a;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     text-align:center;
-    padding:30px;
-    color:#666;
+
+    padding:45px 20px;
+
+    color:#64748b;
+
+    font-size:14px;
 }
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-container{
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    nav ul{
+        gap:0;
+    }
+
+    nav ul li a{
+        padding:18px 8px;
+
+        font-size:12px;
+    }
+
+    header{
+        padding-top:35px;
+    }
+
+    .hero{
+        padding:40px 30px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .tagline{
+        font-size:17px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
 
 @media(max-width:700px){
 
-.intro{
-flex-direction:column;
-text-align:center;
+    html{
+        scroll-padding-top:125px;
+    }
+
+    nav{
+        overflow-x:auto;
+
+        -webkit-overflow-scrolling:touch;
+
+        scrollbar-width:none;
+    }
+
+    nav::-webkit-scrollbar{
+        display:none;
+    }
+
+    .nav-container{
+        display:block;
+
+        padding:0;
+    }
+
+    .logo{
+        display:none;
+    }
+
+    nav ul{
+        flex-direction:row;
+
+        justify-content:flex-start;
+
+        flex-wrap:nowrap;
+
+        width:max-content;
+
+        min-width:100%;
+
+        padding:0 8px;
+    }
+
+    nav ul li{
+        flex-shrink:0;
+    }
+
+    nav ul li a{
+        padding:14px 11px;
+
+        font-size:12px;
+
+        white-space:nowrap;
+    }
+
+
+    /* HERO */
+
+    header{
+        padding:
+        22px 14px
+        0;
+    }
+
+    .hero{
+        padding:32px 20px;
+
+        border-radius:18px;
+
+        text-align:center;
+    }
+
+    .intro{
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    .profile-pic{
+        width:125px;
+        height:125px;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .tagline{
+        font-size:15px;
+
+        line-height:1.55;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-contact{
+        justify-content:center;
+
+        flex-direction:column;
+
+        gap:8px;
+    }
+
+
+    /* SECTIONS */
+
+    section{
+        margin-left:14px;
+        margin-right:14px;
+    }
+
+    .section{
+        padding:22px 18px;
+
+        margin-top:18px;
+
+        border-radius:14px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    h3{
+        font-size:17px;
+    }
+
+
+    /* GRIDS */
+
+    .projects-grid,
+    .website-grid{
+        grid-template-columns:1fr;
+    }
+
 }
 
-nav ul{
-flex-direction:column;
-}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:400px){
+
+    nav ul li a{
+        font-size:11px;
+
+        padding:
+        13px 9px;
+    }
+
+    .hero h1{
+        font-size:26px;
+    }
+
+    .tagline{
+        font-size:14px;
+    }
+
+    .section{
+        padding:
+        20px 16px;
+    }
 
 }
+
 </style>
-
 </head>
+
 
 <body>
 
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+
 <nav>
+
+<div class="nav-container">
+
+<a href="#about" class="logo">
+Hamza<span>.</span>
+</a>
 
 <ul>
 
-<li><a href="#about">About</a></li>
+<li>
+<a href="#about">
+About
+</a>
+</li>
 
-<li><a href="#education">Education</a></li>
+<li>
+<a href="#education">
+Education
+</a>
+</li>
 
-<li><a href="#experience">Experience</a></li>
+<li>
+<a href="#experience">
+Experience
+</a>
+</li>
 
-<li><a href="#skills">Skills</a></li>
+<li>
+<a href="#skills">
+Skills
+</a>
+</li>
 
-<li><a href="#projects">Projects</a></li>
+<li>
+<a href="#projects">
+Projects
+</a>
+</li>
 
-<li><a href="#achievements">Achievements</a></li>
+<li>
+<a href="#achievements">
+Achievements
+</a>
+</li>
 
 </ul>
 
+</div>
+
 </nav>
+
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
 
 <header id="about">
 
+<div class="hero">
+
 <div class="intro">
 
-<img src="me.jpg" class="profile-pic">
+<img
+src="me.jpg"
+alt="M. Hamza Nadeem"
+class="profile-pic"
+>
 
-<div>
+<div class="hero-content">
 
-<h1>M. Hamza Nadeem</h1>
+<h1>
+M. Hamza Nadeem
+</h1>
 
-<p style="font-size:20px;color:#555;font-weight:600;">
-Software Engineering Student | WordPress Developer | AI Chatbot (RAG) Developer
+<p class="tagline">
+Full-Stack Developer | React & FastAPI Developer |
+WordPress Developer | AI & RAG Chatbot Developer
 </p>
 
+<p class="hero-description">
+
+Software Engineering student focused on building
+modern full-stack web applications, responsive
+WordPress websites, eCommerce solutions and
+AI-powered applications using React, FastAPI,
+OpenAI and vector databases.
+
+</p>
+
+<div class="hero-contact">
+
+<a href="tel:+923107125676">
+📞 +92 310 7125676
+</a>
+
+<a href="mailto:hamzanadeemc@gmail.com">
+✉ hamzanadeemc@gmail.com
+</a>
+
+<span>
+📍 Gujranwala, Punjab, Pakistan
+</span>
+
 </div>
 
 </div>
+
+</div>
+
+</div>
+
 
 <div class="section">
 
-<h2>About Me</h2>
+<h2>
+Professional Summary
+</h2>
 
-<p>
+<p class="about-text">
 
-Software Engineering student (8th Semester) with strong experience in developing modern WordPress websites, WooCommerce stores, and AI-powered Retrieval-Augmented Generation (RAG) chatbots.
+Software Engineering student in the
+<strong>8th Semester</strong>
+with hands-on experience in
+<strong>full-stack web development,
+WordPress development, WooCommerce,
+React, FastAPI and AI-powered applications.</strong>
 
-I specialize in building responsive, user-friendly websites using WordPress, Elementor, WooCommerce, HTML, CSS, JavaScript, PHP, and MySQL.
+I develop responsive and user-focused web applications
+using technologies including
+<strong>React, FastAPI, Python, JavaScript,
+PHP, MySQL and REST APIs.</strong>
 
-I also developed <strong>SmartChat</strong>, an AI chatbot platform powered by FastAPI, OpenAI API, and Pinecone Vector Database that allows businesses to create intelligent chatbots trained on PDFs and websites.
+I also specialize in building professional WordPress
+websites using
+<strong>Elementor and WooCommerce</strong>,
+including theme customization, responsive layouts,
+performance optimization, SEO improvements and
+deployment to live hosting.
+
+My major AI project,
+<strong>SmartChat</strong>,
+is a no-code AI chatbot platform that uses
+<strong>FastAPI, React, OpenAI APIs,
+Retrieval-Augmented Generation (RAG) and
+Pinecone Vector Database</strong>
+to create knowledge-based intelligent chatbots
+trained using documents and websites.
 
 </p>
-
-<div class="contact">
-
-<p><strong>📞 Phone:</strong> +92 310 7125676</p>
-
-<p><strong>📧 Email:</strong> hamzanadeemc@gmail.com</p>
-
-<p><strong>📍 Location:</strong> Gujranwala, Punjab, Pakistan</p>
-
-</div>
 
 </div>
 
 </header>
 
-<section id="education" class="section">
 
-<h2>Education</h2>
 
-<p>
+<!-- ======================================================
+     EDUCATION
+====================================================== -->
 
-<strong>Punjab Group of Colleges</strong><br>
+<section
+id="education"
+class="section"
+>
 
-F.Sc. Pre-Engineering (2020–2022)
+<h2>
+Education
+</h2>
 
-</p>
 
-<br>
+<div class="education-item">
 
-<p>
+<div class="education-title">
+GIFT University
+</div>
 
-<strong>GIFT University</strong><br>
+<div class="education-meta">
+Bachelor of Science in Software Engineering
+| 8th Semester
+</div>
 
-Bachelor of Science in Software Engineering (8th Semester)
+</div>
 
-</p>
 
-<br>
+<div class="education-item">
 
-<p>
+<div class="education-title">
+Punjab Group of Colleges
+</div>
 
-<strong>Relevant Courses</strong>
+<div class="education-meta">
+F.Sc. Pre-Engineering | 2020 – 2022
+</div>
 
-</p>
+</div>
+
+
+<h3>
+Relevant Coursework
+</h3>
 
 <ul>
 
-<li>Object-Oriented Programming</li>
+<li>
+Object-Oriented Programming
+</li>
 
-<li>Data Structures & Algorithms</li>
+<li>
+Data Structures & Algorithms
+</li>
 
-<li>Database Systems</li>
+<li>
+Database Systems
+</li>
 
-<li>Web Engineering</li>
+<li>
+Web Engineering
+</li>
 
-<li>Software Engineering</li>
+<li>
+Software Engineering
+</li>
 
-<li>Artificial Intelligence</li>
+<li>
+Artificial Intelligence
+</li>
 
-<li>Machine Learning</li>
+<li>
+Machine Learning
+</li>
 
-<li>Mobile Application Development</li>
+<li>
+Mobile Application Development
+</li>
+
+<li>
+Software Quality Engineering
+</li>
+
+<li>
+Computer Networks
+</li>
 
 </ul>
 
 </section>
 
-<section id="experience" class="section">
 
-<h2>Experience</h2>
+
+<!-- ======================================================
+     EXPERIENCE
+====================================================== -->
+
+<section
+id="experience"
+class="section"
+>
+
+<h2>
+Professional Experience
+</h2>
+
+
+<h3>
+Freelance Full-Stack, WordPress & AI Developer
+</h3>
 
 <p>
+<strong>
+2024 – Present
+</strong>
+</p>
 
-<strong>Freelance WordPress & AI Chatbot Developer (2024 – Present)</strong>
 
+<ul>
+
+<li>
+Design and develop responsive WordPress websites
+using Elementor, WooCommerce and custom CSS.
+</li>
+
+<li>
+Develop responsive frontend interfaces using
+React, HTML5, CSS3, JavaScript and Bootstrap.
+</li>
+
+<li>
+Build backend APIs and application logic using
+FastAPI, Python, PHP and MySQL.
+</li>
+
+<li>
+Customize WordPress themes, plugins and
+WooCommerce stores based on client requirements.
+</li>
+
+<li>
+Deploy and configure WordPress websites
+on production hosting environments.
+</li>
+
+<li>
+Build AI-powered RAG chatbots using FastAPI,
+OpenAI APIs and Pinecone Vector Database.
+</li>
+
+<li>
+Integrate AI chatbot widgets into websites
+and business applications.
+</li>
+
+<li>
+Build REST API-based integrations between
+frontend and backend systems.
+</li>
+
+<li>
+Optimize websites for performance,
+SEO, responsiveness and usability.
+</li>
+
+<li>
+Implement responsive designs optimized for
+desktop, tablet and mobile devices.
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- ======================================================
+     SKILLS
+====================================================== -->
+
+<section
+id="skills"
+class="section"
+>
+
+<h2>
+Technical Skills
+</h2>
+
+
+<h3>
+Frontend Development
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">React</span>
+
+<span class="skill">JavaScript</span>
+
+<span class="skill">HTML5</span>
+
+<span class="skill">CSS3</span>
+
+<span class="skill">Bootstrap</span>
+
+<span class="skill">Tailwind CSS</span>
+
+<span class="skill">Responsive Design</span>
+
+</div>
+
+
+<h3>
+Backend Development
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">FastAPI</span>
+
+<span class="skill">Python</span>
+
+<span class="skill">PHP</span>
+
+<span class="skill">REST APIs</span>
+
+<span class="skill">MySQL</span>
+
+<span class="skill">SQLAlchemy</span>
+
+</div>
+
+
+<h3>
+AI & Machine Learning
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">
+AI Chatbot Development
+</span>
+
+<span class="skill">
+Retrieval-Augmented Generation
+</span>
+
+<span class="skill">
+OpenAI API
+</span>
+
+<span class="skill">
+Pinecone
+</span>
+
+<span class="skill">
+Vector Databases
+</span>
+
+<span class="skill">
+Machine Learning
+</span>
+
+</div>
+
+
+<h3>
+WordPress Development
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">
+WordPress
+</span>
+
+<span class="skill">
+WooCommerce
+</span>
+
+<span class="skill">
+Elementor
+</span>
+
+<span class="skill">
+Theme Customization
+</span>
+
+<span class="skill">
+Website Optimization
+</span>
+
+<span class="skill">
+WordPress SEO
+</span>
+
+</div>
+
+
+<h3>
+Mobile & Other Technologies
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">
+React Native
+</span>
+
+<span class="skill">
+Firebase
+</span>
+
+<span class="skill">
+Java
+</span>
+
+<span class="skill">
+C++
+</span>
+
+<span class="skill">
+Git
+</span>
+
+<span class="skill">
+GitHub
+</span>
+
+</div>
+
+
+<h3>
+Design & Creative Tools
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">
+Figma
+</span>
+
+<span class="skill">
+Canva
+</span>
+
+<span class="skill">
+CapCut
+</span>
+
+</div>
+
+
+<h3>
+Languages
+</h3>
+
+<div class="skills-grid">
+
+<span class="skill">
+English
+</span>
+
+<span class="skill">
+Urdu
+</span>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     PROJECTS
+====================================================== -->
+
+<section
+id="projects"
+class="section"
+>
+
+<h2>
+Featured Projects
+</h2>
+
+
+<div class="projects-grid">
+
+
+<!-- SMARTCHAT -->
+
+<div class="project-card">
+
+<h3>
+🤖 SmartChat – AI Chatbot Platform
+</h3>
+
+<p>
+Full-stack no-code AI chatbot platform designed
+for creating knowledge-based business chatbots.
 </p>
 
 <ul>
 
-<li>Develop custom WordPress websites using Elementor and WooCommerce.</li>
+<li>
+React + TypeScript frontend.
+</li>
 
-<li>Customize themes and plugins according to client requirements.</li>
+<li>
+FastAPI Python backend.
+</li>
 
-<li>Deploy WordPress websites on live hosting.</li>
+<li>
+OpenAI API integration.
+</li>
 
-<li>Create AI-powered RAG Chatbots using FastAPI, OpenAI API and Pinecone.</li>
+<li>
+Pinecone Vector Database.
+</li>
 
-<li>Integrate chatbot widgets into business websites.</li>
+<li>
+Retrieval-Augmented Generation.
+</li>
 
-<li>Develop responsive web applications using PHP, HTML, CSS, JavaScript and MySQL.</li>
+<li>
+PDF and website knowledge training.
+</li>
 
-<li>Optimize websites for speed, SEO and mobile responsiveness.</li>
+<li>
+Multi-chatbot support.
+</li>
 
-</ul>
+<li>
+Subscription plans.
+</li>
 
-</section>
+<li>
+Admin dashboard.
+</li>
 
-<section id="skills" class="section">
-
-<h2>Technical Skills</h2>
-
-<ul>
-
-<li>WordPress</li>
-
-<li>WooCommerce</li>
-
-<li>Elementor</li>
-
-<li>AI Chatbot Development</li>
-
-<li>Retrieval-Augmented Generation (RAG)</li>
-
-<li>FastAPI</li>
-
-<li>OpenAI API</li>
-
-<li>Pinecone Vector Database</li>
-
-<li>HTML5</li>
-
-<li>CSS3</li>
-
-<li>JavaScript</li>
-
-<li>Bootstrap</li>
-
-<li>PHP</li>
-
-<li>MySQL</li>
-
-<li>Java</li>
-
-<li>C++</li>
-
-<li>React</li>
-
-<li>React Native</li>
-
-<li>Firebase</li>
-
-<li>Git & GitHub</li>
-
-<li>Figma</li>
-
-<li>Canva</li>
-
-<li>CapCut</li>
+<li>
+Embeddable chatbot widget.
+</li>
 
 </ul>
 
-<br>
-
-<h3>Languages</h3>
-
-<ul>
-
-<li>English</li>
-
-<li>Urdu</li>
-
-</ul>
-
-</section>
-
-<section id="projects" class="section">
-
-<h2>Projects</h2>
-
-<h3>🤖 SmartChat – AI RAG Chatbot Platform</h3>
-
-<ul>
-
-<li>Built using FastAPI, OpenAI API and Pinecone.</li>
-
-<li>Supports Retrieval-Augmented Generation (RAG).</li>
-
-<li>Train chatbots using PDFs and Websites.</li>
-
-<li>Subscription plans and Admin Dashboard.</li>
-
-<li>Multi-category AI chatbot platform.</li>
-
-</ul>
-
-<a href="https://github.com/HamzaNadeem9910" target="_blank" class="project-link">
-🔗 GitHub Profile
+<a
+href="https://github.com/HamzaNadeem9910/SmartChat--No-Code-AI-bot-builder"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+>
+View Project ↗
 </a>
 
-<br><br>
+</div>
 
-<h3>🛒 WordPress WooCommerce Websites</h3>
 
-<ul>
 
-<li>Developed responsive eCommerce stores.</li>
+<!-- WORDPRESS -->
 
-<li>Elementor Page Builder.</li>
+<div class="project-card">
 
-<li>SEO Optimization.</li>
+<h3>
+🌐 Professional WordPress Websites
+</h3>
 
-<li>Payment Gateway Integration.</li>
-
-<li>Speed Optimization.</li>
-
-</ul>
-
-<br>
-
-<h3>📱 Chohan Textile Mobile App</h3>
-
-<p>Developed using React Native and Firebase.</p>
-
-<br>
-
-<h3>☀ Solar Solution Web Application</h3>
-
-<p>Developed using PHP, HTML, CSS, JavaScript and MySQL.</p>
-
-</section>
-
-<section id="achievements" class="section">
-
-<h2>Achievements</h2>
+<p>
+Designed and developed responsive business
+and eCommerce WordPress websites.
+</p>
 
 <ul>
 
-<li>National Competency Test (NCT) – 97 Percentile.</li>
+<li>
+Elementor page building.
+</li>
 
-<li>Developed SmartChat AI Chatbot Platform.</li>
+<li>
+WooCommerce stores.
+</li>
 
-<li>Freelance WordPress Developer.</li>
+<li>
+Custom responsive CSS.
+</li>
 
-<li>Experience with WooCommerce & Elementor.</li>
+<li>
+Theme customization.
+</li>
 
-<li>GitHub Portfolio with Multiple Projects.</li>
+<li>
+Product catalog development.
+</li>
+
+<li>
+SEO optimization.
+</li>
+
+<li>
+Performance optimization.
+</li>
+
+<li>
+Live hosting deployment.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- CHOHAN -->
+
+<div class="project-card">
+
+<h3>
+📱 Chohan Textile Mobile App
+</h3>
+
+<p>
+Full eCommerce mobile application built for
+a textile business.
+</p>
+
+<ul>
+
+<li>
+React Native.
+</li>
+
+<li>
+Expo.
+</li>
+
+<li>
+Firebase Realtime Database.
+</li>
+
+<li>
+Product management.
+</li>
+
+<li>
+Shopping cart.
+</li>
+
+<li>
+Checkout functionality.
+</li>
+
+<li>
+Admin product management.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- SOLAR -->
+
+<div class="project-card">
+
+<h3>
+☀ Solar Solution Web Application
+</h3>
+
+<p>
+Web-based solar solutions platform developed
+using frontend and backend web technologies.
+</p>
+
+<ul>
+
+<li>
+PHP backend.
+</li>
+
+<li>
+MySQL database.
+</li>
+
+<li>
+HTML / CSS.
+</li>
+
+<li>
+JavaScript.
+</li>
+
+<li>
+Admin functionality.
+</li>
+
+<li>
+Customer interface.
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     LIVE WORDPRESS SITES
+====================================================== -->
+
+<h3 style="margin-top:35px;">
+Live WordPress Websites
+</h3>
+
+<p>
+Selected WordPress websites developed and
+deployed to live production hosting.
+</p>
+
+
+<div class="website-grid">
+
+
+<!-- WEBSITE 1 -->
+
+<div class="website-card">
+
+<h3>
+Medicos Surgical Instruments
+</h3>
+
+<p>
+Professional surgical and dental instruments
+business website built using WordPress with
+responsive layouts, product presentation and
+SEO-focused development.
+</p>
+
+<a
+href="https://medicos-mi.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+>
+Visit Live Website ↗
+</a>
+
+</div>
+
+
+
+<!-- WEBSITE 2 -->
+
+<div class="website-card">
+
+<h3>
+WordPress Client Website
+</h3>
+
+<p>
+Responsive WordPress business website featuring
+modern UI, mobile optimization and customized
+content sections.
+</p>
+
+<!--
+IMPORTANT:
+Replace the link below with your second
+live WordPress website.
+-->
+
+<a
+href="https://YOUR-SECOND-WEBSITE.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+>
+Visit Live Website ↗
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- GITHUB -->
+
+<div style="margin-top:30px;">
+
+<h3>
+GitHub
+</h3>
+
+<p>
+Explore more of my software development
+and academic projects.
+</p>
+
+<a
+href="https://github.com/HamzaNadeem9910"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+>
+View GitHub Profile ↗
+</a>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     ACHIEVEMENTS
+====================================================== -->
+
+<section
+id="achievements"
+class="section"
+>
+
+<h2>
+Achievements
+</h2>
+
+<ul class="achievement-list">
+
+<li>
+Achieved
+<strong>
+97 Percentile
+</strong>
+in the National Competency Test (NCT).
+</li>
+
+<li>
+Designed and developed
+<strong>
+SmartChat
+</strong>,
+a full-stack AI-powered RAG chatbot platform.
+</li>
+
+<li>
+Developed and deployed professional
+WordPress business and eCommerce websites.
+</li>
+
+<li>
+Hands-on experience with
+React, FastAPI, OpenAI APIs,
+Pinecone and full-stack development.
+</li>
+
+<li>
+Built multiple academic and personal
+software development projects.
+</li>
+
+<li>
+Maintained a GitHub portfolio containing
+web, mobile and AI development projects.
+</li>
 
 </ul>
 
 </section>
+
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
-© 2026 M. Hamza Nadeem | Portfolio CV
+© 2026 M. Hamza Nadeem
+<br>
+
+Full-Stack Developer |
+WordPress Developer |
+AI & RAG Chatbot Developer
 
 </footer>
 
+
 </body>
 </html>
+```
